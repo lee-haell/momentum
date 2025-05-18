@@ -24,3 +24,15 @@ console.log(dayOfWeeks[5]); //sat
 
 dayOfWeeks.push("sun");
 console.log(dayOfWeeks); //"mon", "tue", "wed", "thu", "fri", "sat", "sun"
+
+
+//objects
+const player = {
+    name: "Rin",
+    points: 10,
+    fat: false
+};
+
+console.log(player);
+console.log(player.name);
+player.points = player.points + 15;
