@@ -116,3 +116,9 @@ console.log(plusResult); //3 출력
 //conditional
 const checkAge = parseInt(prompt("How old are you?")); //pareInt라는 함수(값을 문자열로 분석, 정수로 반환)
 console.log(checkAge); //문자열일 경우, NaN 출력. 
+
+if(isNaN(checkAge)){ //isNaN() > NaN 값인지 확인하는 함수
+    console.log("Please write a number."); //값이 string일 경우, NaN값으로 인식하고 출력된다.
+} else {
+    console.log("Thank you for writing your age.");
+} 
