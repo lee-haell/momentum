@@ -114,20 +114,20 @@ console.log(plusResult); //3 출력
 
 
 //conditional
-const checkAge = parseInt(prompt("How old are you?")); //pareInt라는 함수(값을 문자열로 분석, 정수로 반환)
-console.log(checkAge); //문자열일 경우, NaN 출력. 
+// const checkAge = parseInt(prompt("How old are you?")); //pareInt라는 함수(값을 문자열로 분석, 정수로 반환)
+// console.log(checkAge); //문자열일 경우, NaN 출력. 
 
-if(isNaN(checkAge) || checkAge < 0){ //isNaN() > NaN 값인지 확인하는 함수
-    console.log("Please write a number."); //값이 string일 경우, NaN값으로 인식하고 출력된다.
-} else if(checkAge < 18) { 
-    console.log("you are too young."); //18 미만일 경우 출력
-} else if(checkAge >= 18 && checkAge <= 50) {
-    console.log("you can drink."); //18 ~ 50 사이일 경우 출력
-} else if(checkAge >= 51 && checkAge <= 80) {
-    console.log("you should exercise."); //51 ~ 80 사이일 경우 출력
-} else if(checkAge > 80) {
-    console.log("you can do everything."); //80 초과 일 경우 출력
-}
+// if(isNaN(checkAge) || checkAge < 0){ //isNaN() > NaN 값인지 확인하는 함수
+//     console.log("Please write a number."); //값이 string일 경우, NaN값으로 인식하고 출력된다.
+// } else if(checkAge < 18) { 
+//     console.log("you are too young."); //18 미만일 경우 출력
+// } else if(checkAge >= 18 && checkAge <= 50) {
+//     console.log("you can drink."); //18 ~ 50 사이일 경우 출력
+// } else if(checkAge >= 51 && checkAge <= 80) {
+//     console.log("you should exercise."); //51 ~ 80 사이일 경우 출력
+// } else if(checkAge > 80) {
+//     console.log("you can do everything."); //80 초과 일 경우 출력
+// }
 
 //or(||) > 하나만 true여도 true
 true || false === true
@@ -143,9 +143,15 @@ false && false ===false
 
 
 //html in javascript | javascirpt로 html element 가져오기 
-const title = document.getElementById("title");
-title.innerText = "Got you!";
+// const title = document.getElementById("title");
+// title.innerText = "Got you!";
 
-console.log(title.id);
-console.log(title.className);
+// console.log(title.id);
+// console.log(title.className);
 
+
+//searching for elements
+//
+const title2 = document.querySelector(".hello h1"); //querySelector > css selector 자체를 전달함
+title2.innerText = "Hello!"
+console.log(title2);
