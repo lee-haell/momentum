@@ -151,7 +151,45 @@ false && false ===false
 
 
 //searching for elements
-//
 const title2 = document.querySelector(".hello h1"); //querySelector > css selector 자체를 전달함
 title2.innerText = "Hello!"
 console.log(title2);
+
+
+//events
+const title3 = document.querySelector(".hello h1");
+// title3.style.color = "blue"; //css 제어
+
+function titleClick(){
+    title3.style.color = "blue";
+}
+function titleMouseOn(){
+    title3.innerText = "Mouse on!"
+}
+function titleMouseDown(){
+    title3.innerText = "Mouse down!"
+}
+title3.addEventListener("click", titleClick);
+title3.addEventListener("mouseenter", titleMouseOn);
+title3.addEventListener("mouseleave", titleMouseDown);
+
+
+//more events
+function resizeWindow(){
+    document.body.style.backgroundColor = "tomato";
+}
+function copyCheck(){
+    alert("copy~!");
+}
+function handleOnline(){
+    alert("Wifi OK");
+}
+function handleOffline(){
+    alert("Wifi NO");
+}
+
+window.addEventListener("resize", resizeWindow);
+window.addEventListener("copy", copyCheck);
+window.addEventListener("online", handleOnline);
+window.addEventListener("offline", handleOffline);
+
