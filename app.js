@@ -141,3 +141,11 @@ true && false === false
 false && true === false
 false && false ===false
 
+
+//html in javascript | javascirpt로 html element 가져오기 
+const title = document.getElementById("title");
+title.innerText = "Got you!";
+
+console.log(title.id);
+console.log(title.className);
+
