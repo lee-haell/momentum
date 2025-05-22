@@ -165,12 +165,7 @@ const title3 = document.querySelector(".hello h1");
 //css에 active 클래스 추가 (html 스타일 추가)
 //javascript에 함수와 클릭 이벤트 추가 (html 제어)
 function titleClick(){
-    const activeTitle = "active";
-    if(title3.classList.contains(activeTitle)){
-        title3.classList.remove(activeTitle);
-    } else {
-        title3.classList.add(activeTitle);
-    }
+    title3.classList.toggle("active");
 }
 
 title3.addEventListener("click", titleClick);
