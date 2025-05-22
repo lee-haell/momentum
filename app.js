@@ -161,7 +161,13 @@ const title3 = document.querySelector(".hello h1");
 // title3.style.color = "blue"; //css 제어
 
 function titleClick(){
-    title3.style.color = "blue";
+    // title3.style.color = "blue";
+    if(title3.style.color === "blue"){
+        title3.style.color = "orange";
+    } else {
+        title3.style.color = "blue";
+    }
+    console.log(title3.style.color);
 }
 function titleMouseOn(){
     title3.innerText = "Mouse on!"
@@ -170,26 +176,28 @@ function titleMouseDown(){
     title3.innerText = "Mouse down!"
 }
 title3.addEventListener("click", titleClick);
-title3.addEventListener("mouseenter", titleMouseOn);
-title3.addEventListener("mouseleave", titleMouseDown);
+// title3.addEventListener("mouseenter", titleMouseOn);
+// title3.addEventListener("mouseleave", titleMouseDown);
 
 
 //more events
-function resizeWindow(){
-    document.body.style.backgroundColor = "tomato";
-}
-function copyCheck(){
-    alert("copy~!");
-}
-function handleOnline(){
-    alert("Wifi OK");
-}
-function handleOffline(){
-    alert("Wifi NO");
-}
+// function resizeWindow(){
+//     document.body.style.backgroundColor = "tomato";
+// }
+// function copyCheck(){
+//     alert("copy~!");
+// }
+// function handleOnline(){
+//     alert("Wifi OK");
+// }
+// function handleOffline(){
+//     alert("Wifi NO");
+// }
 
-window.addEventListener("resize", resizeWindow);
-window.addEventListener("copy", copyCheck);
-window.addEventListener("online", handleOnline);
-window.addEventListener("offline", handleOffline);
+// window.addEventListener("resize", resizeWindow);
+// window.addEventListener("copy", copyCheck);
+// window.addEventListener("online", handleOnline);
+// window.addEventListener("offline", handleOffline);
 
+
+//css in javascript
