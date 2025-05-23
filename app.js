@@ -1,13 +1,16 @@
-const loginInput = document.querySelector("#login-form input");
-const loginBtn = document.querySelector("#login-form button");
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#userNameInput");
+const greeting = document.querySelector("#greeting");
 
-function onLoginBtnClick(){
+const HIDDEN_CLASSNAME = "hidden"; //일반적으로 string만 포함된 변수는 대문자로 표기, string 저장하고 싶을 때 사용
+function onLoginSubmit(evnet){
+    evnet.preventDefault(); //input의 submit을 막는 역할
     const userName = loginInput.value;
-    if(userName === ""){
-        alert("Please write your name!");
-    } else if(userName.length > 15){
-        alert("Your name is too long~");
-    }
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    console.log(userName);
+    // greeting.innerText = "Hello, " + userName;
+    greeting.innerText = `Hello, ${userName}`; //위의 코드와 같은 의미, string+변수명 함께 쓸 때
+    greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
-loginBtn.addEventListener("click", onLoginBtnClick);
+loginForm.addEventListener("submit", onLoginSubmit);
