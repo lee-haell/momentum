@@ -8,6 +8,7 @@ function onLoginSubmit(evnet){
     const userName = loginInput.value;
     loginForm.classList.add(HIDDEN_CLASSNAME);
     console.log(userName);
+    localStorage.setItem("username", userName);
     // greeting.innerText = "Hello, " + userName;
     greeting.innerText = `Hello, ${userName}`; //위의 코드와 같은 의미, string+변수명 함께 쓸 때
     greeting.classList.remove(HIDDEN_CLASSNAME);
