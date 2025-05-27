@@ -1,9 +1,9 @@
 const clock = document.querySelector("#clock");
 
-clock.innerText = "lalala";
-
-function sayHello(){
-    console.log("Hello");
+function getClock(){
+    const date = new Date();
+    clock.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 }
 
-setInterval(sayHello, 5000);
+getClock(); //시계 바로 호출
+setInterval(getClock, 1000);
