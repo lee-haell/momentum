@@ -4,7 +4,8 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
 
-const toDos = [];
+//let으로 선언 > 기존에 작성된 배열도 유지지
+let toDos = [];
 
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -52,5 +53,6 @@ console.log(savedToDos);
 
 if(savedToDos !== null){
     const parsedToDos = JSON.parse(savedToDos);
-    parsedToDos.forEach((item) => console.log("This is the turn of", item));
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
 }
