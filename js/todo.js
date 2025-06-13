@@ -4,7 +4,7 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
 
-//let으로 선언 > 기존에 작성된 배열도 유지지
+//let으로 선언 > 기존에 작성된 배열도 유지
 let toDos = [];
 
 function saveToDos() {
@@ -14,19 +14,21 @@ function saveToDos() {
 //todo list를 지우는 함수
 function deleteToDo(event){
     const li = event.target.parentElement;
+    console.log(li.id);
     li.remove();
 }
 
 //todolist에 html element 추가
 function paintToDo(newToDo){
     const li = document.createElement("li");
+    li.id = newToDo.id;
     const span = document.createElement("span");
     const button = document.createElement("button");
     button.innerText = "❌";
     button.addEventListener("click", deleteToDo);
     li.appendChild(span);
     li.appendChild(button);
-    span.innerText = newToDo;
+    span.innerText = newToDo.text;
     toDoList.appendChild(li);
 }
 
@@ -36,8 +38,12 @@ function handleToDoSubmit(event){
     const newToDo = toDoInput.value;
     console.log(toDoInput.value);
     toDoInput.value = "";
-    toDos.push(newToDo);
-    paintToDo(newToDo);
+    const newToDoObj = {
+        text: newToDo,
+        id: Date.now()
+    };
+    toDos.push(newToDoObj);
+    paintToDo(newToDoObj);
     saveToDos();
 }
 
