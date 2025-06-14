@@ -14,9 +14,13 @@ function saveToDos() {
 //todo list를 지우는 함수
 function deleteToDo(event){
     const li = event.target.parentElement;
-    console.log(li.id);
     li.remove();
+
+    //반드시 true를 리턴 > array의 item을 유지하고 싶으면 true를 리턴
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveToDos();
 }
+
 
 //todolist에 html element 추가
 function paintToDo(newToDo){
@@ -62,3 +66,6 @@ if(savedToDos !== null){
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
 }
+
+
+
